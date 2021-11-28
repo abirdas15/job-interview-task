@@ -1,0 +1,99 @@
+<div>
+  <div class="wrap forgot" *ngIf="step === 1">
+    <div class="form " >
+      <div class="text mb-12">
+        Send Request
+      </div>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="msg != null">{{msg}}</div>
+      <div class="form-group-custom ">
+        <input type="email" class="form-control-custom" placeholder="email" [(ngModel)]="ResetForm.email">
+      </div>
+      <br>
+      <div class="form-group-custom mb-12">
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === false" (click)="SendRequest()">Send Request</button>
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === true">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 rotating">
+            <line x1="12" y1="2" x2="12" y2="6"></line>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="6" y2="12"></line>
+            <line x1="18" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="forgot">
+        remembered your password? <a [routerLink]="['']">Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap forgot" *ngIf="step === 2">
+    <div class="form " >
+      <div class="text mb-12">
+        Validation Code
+      </div>
+      <div class="alert alert-success text-center" role="alert" >Validation Code has been sent to your email address.</div>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="msg != null">{{msg}}</div>
+      <div class="form-group-custom ">
+        <input type="text" class="form-control-custom" placeholder="Code" [(ngModel)]="ResetForm.code">
+      </div>
+      <br>
+      <div class="form-group-custom mb-12">
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === false" (click)="ValidateCode()">Verify</button>
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === true">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 rotating">
+            <line x1="12" y1="2" x2="12" y2="6"></line>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="6" y2="12"></line>
+            <line x1="18" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="forgot">
+        remembered your password? <a [routerLink]="['']">Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap forgot" *ngIf="step === 3">
+    <div class="form ">
+      <div class="text mb-12">
+        Reset Password
+      </div>
+      <div class="alert alert-danger text-center" role="alert" *ngIf="msg != null">{{msg}}</div>
+      <div class="form-group-custom mb-12">
+        <input type="password" class="form-control-custom" placeholder="New Password" [(ngModel)]="PasswordForm.password">
+      </div>
+      <div class="form-group-custom mb-12">
+        <input type="password" class="form-control-custom" placeholder="Repeat Password"  [(ngModel)]="PasswordForm.confirm_password">
+      </div>
+      <div class="form-group-custom mb-12">
+
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === false" (click)="ChangePassword()">Change Password</button>
+        <button class=" btn-theme w-100" *ngIf="loadingBtn === true">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 rotating">
+            <line x1="12" y1="2" x2="12" y2="6"></line>
+            <line x1="12" y1="18" x2="12" y2="22"></line>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+            <line x1="2" y1="12" x2="6" y2="12"></line>
+            <line x1="18" y1="12" x2="22" y2="12"></line>
+            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="forgot">
+        remembered your password? <a [routerLink]="['']">Login</a>
+      </div>
+    </div>
+  </div>
+</div>

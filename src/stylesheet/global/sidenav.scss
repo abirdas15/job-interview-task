@@ -1,0 +1,206 @@
+.sidebar{
+  width: 275px;
+  margin-right: 10px;
+  background-color: $theme2;
+  z-index: 1000;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  transition: all .3s ease;
+  &.active{
+    transition: all .3s ease;
+    left: 0;
+  }
+  @media screen and (max-width: 991px){
+    position: fixed;
+    left: -100%;
+    top: 0;
+    transition: all .3s ease;
+    border-radius: 0 10px 10px 0;
+  }
+  .sideWrap{
+    min-height: 200px;
+    /*Logo*/
+    .logo{
+      margin: 0 auto 15px;
+      width: 145px;
+      a{
+        width: 100%;
+        .logo-image{
+          width: 100%;
+        }
+      }
+    }
+
+    /*Address*/
+    .address-wrap{
+      color: #fff;
+      width: 100%;
+      margin-bottom: 25px;
+      .address-image{
+        margin: 0 auto 15px;
+        width: 100%;
+        height: 152px;
+        background-size:118% 119%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px!important;
+      }
+      .address{
+        position: relative;
+        .options{
+          position: absolute;
+          right: 3px;
+          top: -3px;
+          width: 5px;
+          cursor: pointer;
+          .btn{
+            display: block;
+            width: 20px;
+            position: relative;
+            bottom: 5px;
+            box-shadow: none;
+            img{
+              width: 3px;
+            }
+          }
+          .dropDownOption{
+            position: absolute;
+            top: -2px;
+            right: 12px;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            width: 200px;
+            background: #F1F4F8;
+            list-style: none;
+            padding: 8px;
+            margin: 0;
+            border-radius: 4px;
+            border: 1px solid #dfe3e9;
+            transition: all .2s ease;
+            &.active{
+              transition: all .2s ease;
+              right: 9px;
+              visibility: visible;
+              opacity: 1;
+            }
+            &:before{
+              content: '';
+              width: 15px;
+              height: 15px;
+              background: #F1F4F8;
+              position: absolute;
+              right: -7px;
+              top: 8px;
+              z-index: 0;
+              transform: rotate(45deg);
+            }
+            li{
+              display: block!important;
+              &:last-child{
+                a{
+                  border: none;
+                }
+              }
+              a{
+                border-radius: 4px;
+                display: block;
+                padding: 8px 16px;
+                width: 100%!important;
+                text-decoration: none;
+                color: $text!important;
+                font-size: 14px;
+                transition: all .2s ease;
+                &:hover{
+                  transition: all .2s ease;
+                  background: #fff;
+                }
+              }
+            }
+          }
+        }
+        .name{
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .location{
+          font-size: 13px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    /*Menu*/
+    .menu{
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+          display: block;
+          width: 100%;
+          margin-bottom: 2px;
+          a{
+            width: 100%;
+            border-radius: 4px;
+            height: 48px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            transition: all .2s ease;
+            padding: 15px;
+            &.covid{
+              color: $covid;
+            }
+            &:hover{
+              transition: all .2s ease;
+              background-color: #30506D;
+            }
+            &.active{
+              transition: all .2s ease;
+              background-color: #30506D;
+            }
+            .icon{
+              width: 16px;
+              height: 16px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}
+.toggle-icon{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 400;
+  padding: 16px 12px;
+  background: $theme2;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  border-radius: 50%;
+  display: none;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
+  .bar{
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 3px 0;
+    background: #fff;
+  }
+}

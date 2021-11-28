@@ -1,0 +1,44 @@
+ <div class="each-widget-wrapper notes-box Activity">
+    <div class="title ">
+      <div class="row">
+        <div class="col-3">Activity</div>
+        <div class="col-7">
+          <span class="form-group">
+            <input type="text" class="form-control">
+            <span class="icon"><img class="btn-icon" src="./assets/image/search2.png" alt=""></span>
+          </span>
+        </div>
+        <div class="col-2 ">
+          <div class="options "  style="margin-left: auto">
+            <button class="btn  btn-sm toggleDropdownFunctionClass" >
+              <svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10C2.55228 10 3 9.55228 3 9C3 8.44772 2.55228 8 2 8C1.44772 8 1 8.44772 1 9C1 9.55228 1.44772 10 2 10Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3C2.55228 3 3 2.55228 3 2C3 1.44772 2.55228 1 2 1C1.44772 1 1 1.44772 1 2C1 2.55228 1.44772 3 2 3Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 17C2.55228 17 3 16.5523 3 16C3 15.4477 2.55228 15 2 15C1.44772 15 1 15.4477 1 16C1 16.5523 1.44772 17 2 17Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="dropDownOption outsideClick  ">
+              <li><a class="toggleDropdownFunctionClass" href="javascript:void(0)">Option 1</a></li>
+              <li><a class="toggleDropdownFunctionClass" href="javascript:void(0)">Option 1</a></li>
+              <li><a class="toggleDropdownFunctionClass" href="javascript:void(0)">Option 1</a></li>
+              <li><a class="toggleDropdownFunctionClass" href="javascript:void(0)">Option 1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list notes Activities" *ngIf="ActivityFeed != null">
+      <a href="javascript:void(0)" class="each-list" *ngFor="let feed of ActivityFeed">
+        <div class="list-title clearfix">
+          <div class="date-title text-theme d-inline-block">
+            {{feed.dateTime}}
+          </div>
+        </div>
+        <div class="des">
+          <ul>
+            <li class="mb-3" *ngFor="let fed of feed.logs"><strong>{{fed.time}}</strong> - {{fed.text}} - {{fed.user}}</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+ </div>

@@ -1,0 +1,38 @@
+<div class="each-widget-wrapper">
+  <div class="title clearfix">
+            <span class="d-inline-block">
+            Latest Work Order Sent
+              </span>
+    <div class="options float-end"  >
+      <button class="btn  btn-sm toggleDropdownFunctionClass" >
+        <svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10C2.55228 10 3 9.55228 3 9C3 8.44772 2.55228 8 2 8C1.44772 8 1 8.44772 1 9C1 9.55228 1.44772 10 2 10Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3C2.55228 3 3 2.55228 3 2C3 1.44772 2.55228 1 2 1C1.44772 1 1 1.44772 1 2C1 2.55228 1.44772 3 2 3Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M2 17C2.55228 17 3 16.5523 3 16C3 15.4477 2.55228 15 2 15C1.44772 15 1 15.4477 1 16C1 16.5523 1.44772 17 2 17Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="dropDownOption outsideClick  ">
+        <li><a class="toggleDropdownFunctionClass"   href="javascript:void(0)">Option 1</a></li>
+        <li><a class="toggleDropdownFunctionClass"   href="javascript:void(0)">Option 1</a></li>
+        <li><a class="toggleDropdownFunctionClass"   href="javascript:void(0)">Option 1</a></li>
+        <li><a class="toggleDropdownFunctionClass"   href="javascript:void(0)">Option 1</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="list latest-work-order-sent">
+    <a href="javascript:void(0)" *ngFor="let order of sentOrder" class="each-list">
+      <div class="list-title">
+        <div class="img">
+          <img src="../../../assets/image/pdf.png" alt="">
+        </div>
+        <div class="content">
+          <span>{{order.caseType}} - WO# {{order.woNumber}}</span>
+          <span>Sent {{order.date}}</span>
+        </div>
+      </div>
+      <div class="notification">
+        <span class="badge badge-custom"> View </span>
+      </div>
+    </a>
+  </div>
+</div>

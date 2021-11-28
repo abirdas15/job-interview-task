@@ -1,0 +1,349 @@
+.Dashboard{
+  margin-top: 10px;
+  .each-widget-wrapper{
+    width: 100%;
+    height: 358px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #dfe3e9;
+    padding: 15px;
+    position: relative;
+    .title{
+      font-size: 20px;
+      font-weight: 500;
+      .options{
+        position: relative;
+        width: 20px!important;
+        cursor: pointer;
+        .btn{
+          display: block;
+          box-shadow: none!important;
+          &:hover{
+            opacity: .6;
+          }
+          img{
+            width: 3px;
+          }
+        }
+        .dropDownOption{
+          position: absolute;
+          top: -2px;
+          right: 12px;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1;
+          width: 200px;
+          background: #fff;
+          list-style: none;
+          padding: 8px;
+          margin: 0;
+          border-radius: 4px;
+          border: 1px solid #dfe3e9;
+          transition: all .2s ease;
+          &.active{
+            transition: all .2s ease;
+            right: 24px;
+            visibility: visible;
+            opacity: 1;
+          }
+          &:before{
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-right: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            position: absolute;
+            right: -8px;
+            top: 8px;
+            z-index: 0;
+            transform: rotate(45deg);
+          }
+          li{
+            display: block!important;
+            position: relative;
+            z-index: 1;
+            &:last-child{
+              a{
+                border: none;
+              }
+            }
+            a{
+              border-radius: 4px;
+              display: block;
+              padding: 8px 16px;
+              width: 100%!important;
+              text-decoration: none;
+              color: $text!important;
+              font-size: 14px;
+              transition: all .2s ease;
+              &:hover{
+                transition: all .2s ease;
+                background: #F1F4F8;
+              }
+            }
+          }
+        }
+      }
+    }
+    .canvas-wrapper{
+      position: relative;
+      width: 100%;
+      display: table;
+      canvas{
+        width: 100%;
+        height: 100%;
+      }
+      .chartjs-tooltip{
+        position: absolute;
+        left: 188px;
+        top: 87px;
+        width: 105px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 500;
+        .value{
+          color: $theme;
+        }
+      }
+    }
+    .list{
+      margin-top: 10px;
+      overflow: auto;
+      height: 280px;
+      .each-list{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #EEF1F5!important;
+        justify-content: space-between;
+        align-self: center;
+        padding: 11px 10px;
+        border-radius: 8px;
+        margin:  0;
+        color: #000;
+        text-decoration: none;
+        transition: all .2s ease;
+        &:last-child{
+          border-bottom: none!important;
+        }
+        &:hover{
+          transition: all .2s ease;
+          background: #F1F4F8;
+        }
+        .list-title{
+          font-size: 13px;
+          img{
+            width: 16px ;
+            height: 16px ;
+            margin-right: 7px;
+          }
+          span{
+            font-weight: 500;
+            position: relative;
+            top: 2px;
+          }
+        }
+        .notification{
+        .badge{
+          font-size: 0.75rem!important;
+        }
+      }
+
+    }
+      &.building-summary{
+        .each-list{
+          &:hover{
+            transition: all .2s ease;
+            background: #F1F4F8;
+          }
+        }
+      }
+      &.management-report-generated{
+        .each-list{
+          border-bottom: 1px solid #EEF1F5;
+          &:last-child{
+            border-bottom: none;
+          }
+          .list-title{
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          .img{
+            width: 20px;
+            height: 20px;
+            img{
+              width: 100%;
+              height: 100%;
+              margin-right: 0;
+              object-fit: contain;
+            }
+          }
+          .content{
+            margin-left: 10px;
+            span{
+              display: block;
+              &:nth-child(1){
+                font-size: 14px;
+                font-weight: 500;
+              }
+              &:nth-child(2){
+                font-size: 11px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        }
+      }
+      &.latest-work-order-sent{
+        .each-list{
+          border-bottom: 1px solid #EEF1F5;
+          padding: 9px 10px;
+          &:last-child{
+            border-bottom: none;
+          }
+          .list-title{
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          .img{
+            width: 20px;
+            height: 20px;
+            img{
+              width: 100%;
+              height: 100%;
+              margin-right: 0;
+              object-fit: contain;
+            }
+          }
+          .content{
+            margin-left: 10px;
+            span{
+              display: block;
+              &:nth-child(1){
+                font-size: 14px;
+                font-weight: 500;
+              }
+              &:nth-child(2){
+                font-size: 11px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+    &.notes-box{
+      .title{
+        .form-group{
+          position: relative;
+          .form-control{
+            height: 32px;
+            max-width: 240px;
+            border: 0;
+            background: #F1F4F8;
+            border-radius: 4px;
+            padding-left: 35px;
+            font-size: 14px;
+            box-shadow: none!important;
+          }
+          .icon{
+            position: absolute;
+            top: -1px;
+            left: 8px;
+            width: 16px;
+            height: 16px;
+            display: block;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .btn{
+          box-shadow: none!important;
+          &.add{
+            svg{
+              position: relative;
+              bottom: 2px;
+              fill: $theme;
+            }
+          }
+          img{
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            position: relative;
+            left: -1px;
+            top: -1px;
+          }
+        }
+      }
+      .list{
+        &.numbers{
+          table{
+            tr{
+              &:hover{
+                --bs-table-accent-bg: #F1F4F8!important;
+                color: var(--bs-table-hover-color);
+              }
+              &:last-child{
+                td{
+                  border-bottom: none!important;
+                }
+              }
+            }
+            th{
+              font-size: 14px!important;
+              border-bottom: 1px solid #EEF1F5;
+              font-weight: 600!important;
+            }
+            td{
+              border-bottom: 1px solid #EEF1F5;
+              font-size: 14px!important;
+              font-weight: 400!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.notes{
+  display: block!important;
+
+  .each-list{
+    display: block!important;
+    .list-title{
+      .date-title{
+        font-weight: 500!important;
+        font-size: 14px!important;
+      }
+    }
+    .des{
+      font-weight: 400!important;
+      font-size: 14px!important;
+    }
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin: 5px 0;
+      font-size: 14px!important;
+    }
+  }
+}
+.Activities{
+  .each-list{
+    border-bottom: 1px solid #EEF1F5!important;
+    border-radius: 0!important;
+    &:last-child{
+      border-bottom: none!important;
+    }
+  }
+}

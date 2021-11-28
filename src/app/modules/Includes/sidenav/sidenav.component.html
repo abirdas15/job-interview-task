@@ -1,0 +1,95 @@
+<div class="sidebar">
+  <div class="sideWrap">
+    <!--Logo-->
+    <div class="logo">
+      <a href="javascript:void(0)"><img class="logo-image" src="./assets/image/logo.png" alt=""></a>
+    </div>
+
+    <!--Address-->
+    <div class="address-wrap">
+      <div class="address-image" style="background-image: url(./assets/image/building.png)"></div>
+      <div class="address clearfix" *ngIf="Buildings.length > 0">
+        <h4 class="name" *ngIf="Buildings[0].name != null">{{Buildings[0].name}}</h4>
+        <div class="location"><span *ngIf="Buildings[0].address != null">{{Buildings[0].address}}</span>
+          <span *ngIf="Buildings[0].suburb != null">{{Buildings[0].suburb}}</span>
+          <span *ngIf="Buildings[0].state != null"> {{Buildings[0].state}}</span>
+        </div>
+        <div class="options float-end"  >
+          <button class="btn ">
+            <svg width="4" height="15" viewBox="0 0 4 15" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <ellipse cx="2.125" cy="2.75478" rx="1.375" ry="1.8456" fill="white"/>
+              <ellipse cx="2.125" cy="7.67641" rx="1.375" ry="1.8456" fill="white"/>
+              <ellipse cx="2.125" cy="12.598" rx="1.375" ry="1.8456" fill="white"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--Menu-->
+    <div class="menu">
+    <ul>
+      <li>
+        <a [routerLink]="['/bm/dashboard']"  [ngClass]="{'active': current_route === '/bm/dashboard'}" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/dashboard.png" alt=""> &nbsp; DASHBOARD
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/case.png" alt=""> &nbsp; cases
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/send.png" alt=""> &nbsp; work order sent
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/calendar.png" alt=""> &nbsp; calendar
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/maintain.png" alt=""> &nbsp; maintenance schedule
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/build.png" alt=""> &nbsp; building
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/resident.png" alt=""> &nbsp; residents
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/key.png" alt=""> &nbsp; keys
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/parcel.png" alt=""> &nbsp; parcels
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/contra.png" alt=""> &nbsp; contractors
+        </a>
+      </li>
+      <li>
+        <a class="" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/setting.png" alt=""> &nbsp; settings
+        </a>
+      </li>
+      <li>
+        <a class="covid" href="javascript:void(0)">
+          <img class="icon" src="./assets/image/covid.png" alt=""> &nbsp; covid-19 track
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>

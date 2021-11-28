@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+@import "bootstrap/bootstrap";
+
+//Global Variables
+@import "variables";
+
+//Global SCSS
+@import "global";
+
+//Authentication
+@import "auth";
+
+//Main
+@import "main";
+
+
+
+

@@ -1,0 +1,35 @@
+
+
+//Container Wrapper
+.content-wrapper{
+  display: flex;
+  flex-direction: row;
+  background-color: $bg-theme;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+
+  //Sidenav
+  @import "global/sidenav";
+
+  //Main Content Wrapper
+  .main-section{
+    width: calc(100% - 285px);
+    height: 100%;
+    overflow: auto;
+    @media screen and (max-width: 991px){
+      width: 100%;
+    }
+
+    /*Header*/
+    @import "global/header";
+
+    /*Pages*/
+    @import "pages/home";
+  }
+
+  /*FC Calender*/
+  @import "global/fc_calender.scss";
+}
+
+

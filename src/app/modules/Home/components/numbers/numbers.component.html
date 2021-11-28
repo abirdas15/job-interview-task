@@ -1,0 +1,112 @@
+
+<div class="each-widget-wrapper notes-box">
+  <div class="title ">
+    <div class="row">
+      <div class="col-3">Numbers</div>
+      <div class="col-6">
+        <span class="form-group">
+          <input type="text" class="form-control">
+          <span class="icon"><img class="btn-icon" src="./assets/image/search2.png" alt=""></span>
+        </span>
+      </div>
+      <div class="col-3 d-flex justify-content-between">
+        <span class="add">
+          <button class="add btn btn-sm"  *ngIf="DeleteNumber.length > 0" (click)="OpenDeleteModal()">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 3H12V1C12 0.734784 11.8946 0.48043 11.7071 0.292893C11.5196 0.105357 11.2652 0 11 0L5 0C4.73478 0 4.48043 0.105357 4.29289 0.292893C4.10536 0.48043 4 0.734784 4 1V3H1C0.734784 3 0.48043 3.10536 0.292893 3.29289C0.105357 3.48043 0 3.73478 0 4C0 4.26522 0.105357 4.51957 0.292893 4.70711C0.48043 4.89464 0.734784 5 1 5H15C15.2652 5 15.5196 4.89464 15.7071 4.70711C15.8946 4.51957 16 4.26522 16 4C16 3.73478 15.8946 3.48043 15.7071 3.29289C15.5196 3.10536 15.2652 3 15 3ZM6 3V2H10V3H6Z" fill="#D73D3D"/>
+              <path d="M2.05505 7L2.50505 15.1C2.52993 15.3475 2.64617 15.5769 2.83108 15.7433C3.01599 15.9097 3.25629 16.0012 3.50505 16H12.5051C12.753 16 12.992 15.9079 13.1759 15.7416C13.3597 15.5753 13.4753 15.3467 13.5001 15.1L13.9501 7H2.05505Z" fill="#D73D3D"/>
+            </svg>
+          </button>
+        </span>
+        <span class="add">
+          <button class="add btn btn-sm">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 7H9V1C9 0.4 8.6 0 8 0C7.4 0 7 0.4 7 1V7H1C0.4 7 0 7.4 0 8C0 8.6 0.4 9 1 9H7V15C7 15.6 7.4 16 8 16C8.6 16 9 15.6 9 15V9H15C15.6 9 16 8.6 16 8C16 7.4 15.6 7 15 7Z"  />
+            </svg>
+
+          </button>
+        </span>
+        <div class="options "  >
+          <button class="btn  btn-sm toggleDropdownFunctionClass" >
+            <svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10C2.55228 10 3 9.55228 3 9C3 8.44772 2.55228 8 2 8C1.44772 8 1 8.44772 1 9C1 9.55228 1.44772 10 2 10Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3C2.55228 3 3 2.55228 3 2C3 1.44772 2.55228 1 2 1C1.44772 1 1 1.44772 1 2C1 2.55228 1.44772 3 2 3Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 17C2.55228 17 3 16.5523 3 16C3 15.4477 2.55228 15 2 15C1.44772 15 1 15.4477 1 16C1 16.5523 1.44772 17 2 17Z" stroke="#606060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="dropDownOption outsideClick  ">
+            <li><a class="toggleDropdownFunctionClass"  href="javascript:void(0)">Option 1</a></li>
+            <li><a class="toggleDropdownFunctionClass"  href="javascript:void(0)">Option 1</a></li>
+            <li><a class="toggleDropdownFunctionClass"  href="javascript:void(0)">Option 1</a></li>
+            <li><a class="toggleDropdownFunctionClass"  href="javascript:void(0)">Option 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list numbers">
+    <table class="table table-borderless table-hover">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody *ngIf="Number != null">
+      <tr *ngFor="let num of Number">
+        <td>{{num.name}}</td>
+        <td>{{num.number}}</td>
+        <td style="width: 70px">
+          <label class="Checkbox">
+            <input type="checkbox"  [id]="num.id"  (click)="SelectNumbers($event, num.id)">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <!-- Notes Delete Modal -->
+  <div class="modal fade" id="NumbersDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"  (click)="CloseDeleteModal()"></button>
+        </div>
+        <div class="modal-body  border-0 text-center">
+          <div class="icon text-center">
+            <div class="icon-warning">
+              <div class="icon-content">!</div>
+            </div>
+          </div>
+          <div class="text" style="font-size: 1.875em; padding: 0.8em 1em 0; color: #595959" >
+            Are you sure ?
+          </div>
+          <br>
+          <div  class=" border-0 d-flex justify-content-center" >
+            <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal" style="width: 150px" (click)="CloseDeleteModal()">Close</button>
+            <button type="button" class="btn btn-danger"  style="width: 150px" (click)="deleteNumber()" *ngIf="DeleteNumberLoading === false">Yes, Delete it</button>
+            <button type="button" class="btn btn-danger"  style="width: 150px"  *ngIf="DeleteNumberLoading === true">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 rotating">
+                <line x1="12" y1="2" x2="12" y2="6"></line>
+                <line x1="12" y1="18" x2="12" y2="22"></line>
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                <line x1="2" y1="12" x2="6" y2="12"></line>
+                <line x1="18" y1="12" x2="22" y2="12"></line>
+                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+              </svg>
+            </button>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
